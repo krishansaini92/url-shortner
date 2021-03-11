@@ -4,8 +4,11 @@
   "description": "Service for URL shortening",
   "main": "index.js",
   "scripts": {
-    "start": "npm index",
-    "dev": "nodemon index"
+    "start": "node ./index.js",
+    "test": "NODE_ENV=test mocha './**/*.spec.js' --no-coverage --exit --timeout 10000",
+    "fmt:js": "prettier --write",
+    "fmt:json": "prettier --write --parser json",
+    "fmt": "run-s 'fmt:js -- ./**/*.js' 'fmt:json -- ./config/**/*.json ./**/*.json'"
   },
   "keywords": [
     "url",
@@ -19,6 +22,10 @@
     "mongoose": "^5.9.19"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "chai": "^4.3.3",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.3.1",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
   }
 }
