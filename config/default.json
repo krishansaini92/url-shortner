@@ -1,5 +1,7 @@
 {
+  "hostname": "localhost",
   "server": {
     "port": 8000
-  }
+  },
+  "urlFilePath": "./shorturlsfile.txt"
 }
